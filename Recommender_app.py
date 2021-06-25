@@ -5,6 +5,9 @@ import pandas as pd
 from collections import defaultdict
 import json
 
+url_data1 = (r'https://raw.githubusercontent.com/oderofrancis/rona/main/Countries-Continents.csv')
+
+data_csv = pd.read_csv(url_data)
 book_final_data = pd.read_csv(r"C:\Users\Annekathrin\Desktop\york\Course 5\Project 1/book_final_data.csv")
 top_n = json.load(open(r"C:\Users\Annekathrin\Desktop\york\Course 5\Project 1/top_n.jsn", "r"))
 
