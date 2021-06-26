@@ -6,7 +6,7 @@ from collections import defaultdict
 import json
 
 url_data1 = (r'https://github.com/AnneDA/Recommender-app/blob/main/book_final_data.csv')
-book_final_data = pd.read_csv(url_data1)
+book_final_data = pd.read_csv(url_data1, "x")
 
 
 url_data2 = (r'https://github.com/AnneDA/Recommender-app/blob/main/top_n.jsn')
