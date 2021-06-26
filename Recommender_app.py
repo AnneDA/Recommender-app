@@ -52,8 +52,7 @@ def get_reco_list(userid):
         df_set1=df_set.sort_values(by='rating', ascending= False).head(5)
                                    
         return(df_set1)
-                                   
-        return(df_set1)
+       
     
 if st.button('SHOW ME MY READING HISTORY!'):
     result = get_history (option)
