@@ -5,11 +5,13 @@ import pandas as pd
 from collections import defaultdict
 import json
 
-url_data1 = (r'https://raw.githubusercontent.com/oderofrancis/rona/main/Countries-Continents.csv')
+url_data1 = (r'https://github.com/AnneDA/Recommender-app/blob/main/book_final_data.csv')
+book_final_data = pd.read_csv(url_data1)
 
-data_csv = pd.read_csv(url_data)
-book_final_data = pd.read_csv(r"C:\Users\Annekathrin\Desktop\york\Course 5\Project 1/book_final_data.csv")
-top_n = json.load(open(r"C:\Users\Annekathrin\Desktop\york\Course 5\Project 1/top_n.jsn", "r"))
+
+url_data2 = (r'https://github.com/AnneDA/Recommender-app/blob/main/top_n.jsn')
+top_n = json.load(open(url_data2, "r"))
+
 
 
 st.title('BOOK RECOMMENDER')
@@ -40,7 +42,13 @@ def get_reco_list(userid):
             book, rating = n
             title = book_final_data.loc[book_final_data.isbn==book].book_title.unique()[0]
             reading_list[title] = rating
-        return(reading_list)
+            
+        example_reading_list=reading_list.items()
+        df= pd.DataFrame([(k,v)] for k,v in example_reading_list], columns= ['book_title', 'rating'])
+        df_set=df.set.index('book_title')
+        df_set1=df_set.sort_values(by='rating', ascending= False.head(5)
+                                   
+        return(df_set1)
     
 if st.button('SHOW ME MY READING HISTORY!'):
     result = get_history (option)
