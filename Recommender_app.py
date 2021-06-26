@@ -15,8 +15,6 @@ book_final_data = pd.read_csv(r"book_final_data.csv")
 top_n = json.load(open(r"top_n.json", "r")
                        
 
-
-
 st.title('BOOK RECOMMENDER')
 
 #create sidebar
@@ -45,14 +43,13 @@ def get_reco_list(userid):
             book, rating = n
             title = book_final_data.loc[book_final_data.isbn==book].book_title.unique()[0]
             reading_list[title] = rating
-            
         example_reading_list=reading_list.items()
         df= pd.DataFrame([(k,v) for k,v in example_reading_list], columns= ['book_title', 'rating'])
         df_set=df.set_index('book_title')
         df_set1=df_set.sort_values(by='rating', ascending= False).head(5)
                                    
         return(df_set1)
-       
+               
     
 if st.button('SHOW ME MY READING HISTORY!'):
     result = get_history (option)
@@ -61,5 +58,8 @@ if st.button('SHOW ME MY READING HISTORY!'):
 if st.button ("RECOMMEND ME 10 NEW BOOKS!"):
     result2 = get_reco_list (option)
     st.write('HERE WE GO, YOUR RECOMMENDATIONS:', result2)
+            
+   
+
             
    
