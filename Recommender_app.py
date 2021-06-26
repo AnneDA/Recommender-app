@@ -45,8 +45,10 @@ def get_reco_list(userid):
             
         example_reading_list=reading_list.items()
         df= pd.DataFrame([(k,v) for k,v in example_reading_list], columns= ['book_title', 'rating'])
-        df_set=df.set.index('book_title')
-        df_set1=df_set.sort_values(by='rating', ascending= False.head(5)
+        df_set=df.set_index('book_title')
+        df_set1=df_set.sort_values(by='rating', ascending= False).head(5)
+                                   
+        return(df_set1)
                                    
         return(df_set1)
     
