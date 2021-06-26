@@ -6,13 +6,13 @@ from collections import defaultdict
 import json
 
 #url_data1 = (r'https://github.com/AnneDA/Recommender-app/blob/main/book_final_data.csv')
-#book_final_data = pd.read_csv(url_data1, "x")
-book_final_data = pd.read_csv(r'book_final_data.csv')
+#book_final_data = pd.read_csv(url_data1)
+book_final_data = pd.read_csv(r"book_final_data.csv")
 
 
 #url_data2 = (r'https://github.com/AnneDA/Recommender-app/blob/main/top_n.jsn')
 #top_n = json.load(open(url_data2, "r"))
-top_n = pd.read_csv(r'top_n.csv', "r")
+top_n = json.load(open(r"top_n.json", "r")
                        
 
 
